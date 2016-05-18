@@ -7,6 +7,8 @@ import java.util.List;
 import com.magicwork.autoscrollcalendar.R;
 import com.magicwork.widget.engine.CalendarLoader;
 import com.magicwork.widget.entity.Month;
+import com.magicwork.widget.view.AutoScrollCalendarParentLayout;
+import com.magicwork.widget.view.AutoScrollCalendarParentLayout.OnSelectedDayCalendarChangeListener;
 import com.magicwork.widget.view.AutoScrollCalendarView;
 import com.magicwork.widget.view.AutoScrollCalendarView.OnCalendarChangeListener;
 
@@ -19,6 +21,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
 	AutoScrollCalendarView calendarView;
+	AutoScrollCalendarParentLayout calendarPrentView;
 	TextView tvCalendar;
 	TextView tvPreMonth;
 	TextView tvNextMonth;
@@ -33,7 +36,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		tvPreMonth = (TextView) findViewById(R.id.tv_prev_month);
 		tvNextMonth = (TextView) findViewById(R.id.tv_next_month);
 		tvContent=(TextView) findViewById(R.id.tv_content);
-		
+		calendarPrentView=(AutoScrollCalendarParentLayout) findViewById(R.id.calendar_parent);
 		tvNextMonth.setOnClickListener(this);
 		tvPreMonth.setOnClickListener(this);
 		//tvContent.setOnClickListener(this);
@@ -42,11 +45,11 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	public void init() {
 		calendarView.setCurrentMonth(Calendar.getInstance());
-		calendarView.setCalendarChangeListener(new OnCalendarChangeListener() {
-
+		calendarPrentView.setSelectedDayChangedListener(new OnSelectedDayCalendarChangeListener() {
+			
 			@Override
-			public void onMonthChanged(Calendar currentCalendar) {
-				showDate(currentCalendar);
+			public void onSelectedDayChanged(Calendar newCalendar) {
+				showDate(newCalendar);
 			}
 		});
 		showDate(Calendar.getInstance());

@@ -17,6 +17,11 @@ import android.widget.LinearLayout;
  *
  */
 public class AutoScrollCalendarParentLayout extends LinearLayout {
+
+	public interface OnSelectedDayCalendarChangeListener {
+		void onSelectedDayChanged(Calendar newCalendar);
+	}
+
 	public enum Direction {
 		pre, current, next
 	}
@@ -28,6 +33,8 @@ public class AutoScrollCalendarParentLayout extends LinearLayout {
 	boolean isIntercept;
 	boolean isShowScrollCalendarView = true;// 当前是周模式还是月模式
 	OnGlobalLayoutListener layoutListener = null;
+
+	OnSelectedDayCalendarChangeListener selectedDayChangedListener;
 
 	Calendar selectedCalendar = Calendar.getInstance();
 
@@ -128,6 +135,13 @@ public class AutoScrollCalendarParentLayout extends LinearLayout {
 
 	public void setSelectedDayCalendar(Calendar calendar) {
 		selectedCalendar = (Calendar) calendar.clone();
+		if (selectedDayChangedListener != null) {
+			selectedDayChangedListener.onSelectedDayChanged(selectedCalendar);
+		}
+	}
+
+	public void setSelectedDayChangedListener(OnSelectedDayCalendarChangeListener selectedDayChangedListener) {
+		this.selectedDayChangedListener = selectedDayChangedListener;
 	}
 
 }

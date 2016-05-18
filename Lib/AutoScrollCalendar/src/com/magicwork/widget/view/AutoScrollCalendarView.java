@@ -50,7 +50,7 @@ public class AutoScrollCalendarView extends ViewGroup implements ICalendarView {
 		public void onMonthChanged(Calendar currentCalendar);
 	}
 
-	private OnCalendarChangeListener calendarChangeListener;
+	//private OnCalendarChangeListener calendarChangeListener;
 
 	Direction direction;
 	private int lastY;
@@ -434,9 +434,9 @@ public class AutoScrollCalendarView extends ViewGroup implements ICalendarView {
 					updateViewAfterLayout();
 				}
 				isHoriztonalScrolling = false;
-				if (calendarChangeListener != null) {
+				/*if (calendarChangeListener != null) {
 					calendarChangeListener.onMonthChanged(currentCalendar);
-				}
+				}*/
 			} else if (isVerticalScrolling) {
 				isVerticalScrolling = false;
 				if (isMoveUp(0)) {
@@ -490,8 +490,8 @@ public class AutoScrollCalendarView extends ViewGroup implements ICalendarView {
 		}
 	}
 
-	public void setCalendarChangeListener(OnCalendarChangeListener calendarChangeListener) {
+	/*public void setCalendarChangeListener(OnCalendarChangeListener calendarChangeListener) {
 		this.calendarChangeListener = calendarChangeListener;
-	}
+	}*/
 
 }
