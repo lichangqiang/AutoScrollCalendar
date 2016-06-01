@@ -7,4 +7,4 @@ public void setCurrentMonth(Calendar startCalendar)
 切换到上月调用scrollToPre()</br>
 切换到下月调用scrollToNext()</br>
 <h5>3、监听被选择的日子</h5>
-setSelectedDayChangedListener()即可
+使用setSelectedDayChangedListener()监听即可
