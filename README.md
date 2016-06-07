@@ -1,6 +1,6 @@
 # AutoScrollCalendar
 滑动日历，支持上下滑动 左右滑动
-<img src='https://github.com/lichangqiang/AutoScrollCalendar/blob/master/calendar4.gif' height="200" width="200" />
+<img src='https://github.com/lichangqiang/AutoScrollCalendar/blob/master/calendar4.gif' height="350" width="200" />
 <h3>一、使用方法</h3>
 <h5>1、设置初始月份</h5>
 public void setCurrentMonth(Calendar startCalendar)
