@@ -1,5 +1,7 @@
 # AutoScrollCalendar
 滑动日历，支持上下滑动 左右滑动</br>
+欢迎大家访问我的博客提供宝贵建议</br>
+<a href='http://blog.csdn.net/lcq376645763'>http://blog.csdn.net/lcq376645763</a></br>
 <img src='https://github.com/lichangqiang/AutoScrollCalendar/blob/master/calendar4.gif' height="350" width="200" />
 </br>
 <h3>一、使用方法</h3>
